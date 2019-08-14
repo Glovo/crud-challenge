@@ -22,6 +22,6 @@ app.delete('/glovers/:id', function (req, res) { // TODO: Parse gloverId
   res.json(gloversController.delete(req.params.id))
 })
 
-app.listen(80, function () {
+app.listen(process.env.PORT || 80, function () {
   console.log('CORS-enabled web server listening on port 80')
 })
