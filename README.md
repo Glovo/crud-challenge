@@ -4,45 +4,47 @@ All requests to the API should include a custom `interview-id` header. The value
 
 ## Return all glovers
 
+```
 GET: https://crud-challenge.herokuapp.com/glovers
+```
 
 response: 
 
-```
+```json
 {
-   ‘237128737’: {
-        name: ‘Joe Bloggs’,
-        id: 237128737
+   "237128737": {
+        "name": "Joe Bloggs",
+        "id": 237128737
     },
-   ‘230000000’: {
-        name: ‘David Zuckerberg,
-        id: 230000000
+   "230000000": {
+        "name": "David Zuckerberg",
+        "id": 230000000
     }
 }
 ```
 
 ## Add a glover
 
+```
 POST: https://crud-challenge.herokuapp.com/glovers
+```
 
 body:
 
-```
-{
-    name: "GloverName"
-}
+```json
+{ "name": "GloverName" }
 ```
 
-Note: you might get a 500 with short names, also you need the application/json header
+Note: you might get a 500 with short names, also you need the `Content-Type: application/json` header.
 
 If ok, returns:
 
-```
-{
-    Status: “ok”
-}
+```json
+{ "status": “ok” }
 ```
 
 ## Remove a glover
 
+```
 DELETE: https://crud-challenge.herokuapp.com/glovers/:id 
+```

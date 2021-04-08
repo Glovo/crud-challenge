@@ -1,12 +1,17 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const showdown = require('showdown');
 const gloversController = require('./controllers/glovers-controller');
+const fs = require('fs');
 
 const INTERVIEW_ID_HEADER = 'interview-id';
 const app = express();
 const port = process.env.PORT || 8099;
 const db = {};
+const markdownConverter = new showdown.Converter();
+const readmeMarkdown = fs.readFileSync('./README.md', 'utf8');
+const readmeHtml = markdownConverter.makeHtml(readmeMarkdown);
 
 app.use(cors());
 app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -16,6 +21,10 @@ app.use(
     extended: true,
   })
 );
+
+app.get('/', (req, res) => {
+  res.send(readmeHtml);
+});
 
 // Adds a "db" object to the request that is scoped by interview-id header
 app.use((req, res, next) => {
