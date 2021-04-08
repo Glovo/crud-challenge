@@ -43,7 +43,6 @@ If ok, returns:
 }
 ```
 
-
 ## Remove a glover
 
 DELETE: https://crud-challenge.herokuapp.com/glovers/:id 
