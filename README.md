@@ -5,7 +5,7 @@ All requests to the API should include a custom `interview-id` header. The value
 ## Return all glovers
 
 ```
-GET: https://crud-challenge.herokuapp.com/glovers
+GET: https://crud-challenge.deta.dev/glovers
 ```
 
 response: 
@@ -26,7 +26,7 @@ response:
 ## Add a glover
 
 ```
-POST: https://crud-challenge.herokuapp.com/glovers
+POST: https://crud-challenge.deta.dev/glovers
 ```
 
 body:
@@ -46,5 +46,5 @@ If ok, returns:
 ## Remove a glover
 
 ```
-DELETE: https://crud-challenge.herokuapp.com/glovers/:id 
+DELETE: https://crud-challenge.deta.dev/glovers/:id 
 ```

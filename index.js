@@ -7,11 +7,8 @@ const fs = require('fs');
 
 const INTERVIEW_ID_HEADER = 'interview-id';
 const app = express();
-const port = process.env.PORT || 8099;
+const port = process.env.PORT || 8080;
 const db = {};
-const markdownConverter = new showdown.Converter();
-const readmeMarkdown = fs.readFileSync('./README.md', 'utf8');
-const readmeHtml = markdownConverter.makeHtml(readmeMarkdown);
 
 app.use(cors());
 app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -23,6 +20,9 @@ app.use(
 );
 
 app.get('/', (req, res) => {
+  const markdownConverter = new showdown.Converter();
+  const readmeMarkdown = fs.readFileSync('./README.md', 'utf8');
+  const readmeHtml = markdownConverter.makeHtml(readmeMarkdown);
   res.send(readmeHtml);
 });
 
@@ -62,3 +62,5 @@ app.delete('/glovers/:id', (req, res) => {
 app.listen(port, function () {
   console.log(`CORS-enabled web server listening on port ${port}`);
 });
+
+module.exports = app
