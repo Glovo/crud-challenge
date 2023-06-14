@@ -1,1 +1,0 @@
-{"id":"6452c5c4-9865-48a7-832c-ae96752444e9","space":37681,"runtime":"nodejs14.x","name":"crud-challenge","path":"jufpi5","project":"a083qq6b","account":"144798365827","region":"eu-central-1","deps":["cors@^2.8.5","showdown@^1.9.1","body-parser@^1.19.0","express@^4.18.1"],"envs":null,"public":true,"log_level":"debug","cron":""}
